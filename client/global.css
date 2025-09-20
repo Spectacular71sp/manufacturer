@@ -1,0 +1,118 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Unbounded:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 5% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 6% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 10%;
+
+    --primary: 142 72% 29%; /* emerald-600 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 84% 15%; /* deep green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 160 20% 96%;
+    --muted-foreground: 160 10% 35%;
+
+    --accent: 24 95% 53%; /* orange-500 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 10% 88%;
+    --input: 160 10% 88%;
+    --ring: 142 72% 29%;
+
+    --radius: 0.65rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 279 63% 16%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 40% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 160 34% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 160 34% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 142 72% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 70% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 0 0% 85%;
+
+    --accent: 24 95% 55%;
+    --accent-foreground: 160 40% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 22%;
+    --input: 160 15% 22%;
+    --ring: 24 95% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: Unbounded, Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+@layer utilities {
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fade-up { 0% { opacity: 0; transform: translateY(12px);} 100% { opacity: 1; transform: translateY(0);} }
+  .animate-fade-up { animation: fade-up .6s ease-out both; }
+}
